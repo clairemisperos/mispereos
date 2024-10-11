@@ -1,0 +1,340 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialSphere - Messages</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        color: #1c1e21;
+        height: 100%;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        height: calc(100% - 60px);
+    }
+    header {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1877f2;
+        text-decoration: none;
+    }
+    nav a {
+        color: #65676b;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #1877f2;
+    }
+    .messages-container {
+        display: flex;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
+        height: 100%;
+    }
+    .conversations-list {
+        width: 300px;
+        border-right: 1px solid #e4e6eb;
+        overflow-y: auto;
+    }
+    .conversation-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .conversation-item:hover {
+        background-color: #f0f2f5;
+    }
+    .conversation-item.active {
+        background-color: #e6f2fe;
+    }
+    .conversation-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .conversation-info {
+        flex-grow: 1;
+    }
+    .conversation-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .conversation-last-message {
+        font-size: 14px;
+        color: #65676b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .chat-window {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .chat-header {
+        padding: 15px;
+        border-bottom: 1px solid #e4e6eb;
+        display: flex;
+        align-items: center;
+    }
+    .chat-header-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .chat-header-name {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .chat-messages {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+    .message {
+        max-width: 70%;
+        margin-bottom: 15px;
+        clear: both;
+    }
+    .message-content {
+        padding: 10px 15px;
+        border-radius: 18px;
+        display: inline-block;
+    }
+    .message.received .message-content {
+        background-color: #f0f2f5;
+        float: left;
+    }
+    .message.sent .message-content {
+        background-color: #0084ff;
+        color: white;
+        float: right;
+    }
+    .message-time {
+        font-size: 12px;
+        color: #65676b;
+        margin-top: 5px;
+        clear: both;
+    }
+    .message.sent .message-time {
+        float: right;
+    }
+    .chat-input {
+        padding: 15px;
+        border-top: 1px solid #e4e6eb;
+        display: flex;
+    }
+    .chat-input input {
+        flex-grow: 1;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+        background-color: #f0f2f5;
+        font-size: 14px;
+    }
+    .chat-input input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #e7f3ff;
+    }
+    .send-button {
+        background-color: #0084ff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .send-button:hover {
+        background-color: #0073e6;
+    }
+    .send-icon {
+        width: 20px;
+        height: 20px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">SocialSphere</a>
+            <nav>
+                <a href="/home.html"
+                <a href="/home.html"
+                <a href="/home/messages"html"
+                <a href="/home/notifications.html"
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="messages-container">
+            <div class="conversations-list">
+                <div class="conversation-item active">
+                    <img src="https://socialsphere.com/avatars/sarah.jpg" alt="Sarah's avatar" class="conversation-avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Sarah Johnson</div>
+                        <div class="conversation-last-message">Sure, that sounds great!</div>
+                    </div>
+                </div>
+                <div class="conversation-item">
+                    <img src="https://socialsphere.com/avatars/mike.jpg" alt="Mike's avatar" class="conversation-avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Mike Thompson</div>
+                        <div class="conversation-last-message">Hey, are we still on for Friday?</div>
+                    </div>
+                </div>
+                <div class="conversation-item">
+                    <img src="https://socialsphere.com/avatars/emily.jpg" alt="Emily's avatar" class="conversation-avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Emily Davis</div>
+                        <div class="conversation-last-message">Thanks for the help yesterday!</div>
+                    </div>
+                </div>
+                <div class="conversation-item">
+                    <img src="https://socialsphere.com/avatars/alex.jpg" alt="Alex's avatar" class="conversation-avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Alex Rodriguez</div>
+                        <div class="conversation-last-message">Did you see the game last night?</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-window">
+                <div class="chat-header">
+                    <img src="https://socialsphere.com/avatars/sarah.jpg" alt="Sarah's avatar" class="chat-header-avatar">
+                    <div class="chat-header-name">Sarah Johnson</div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message received">
+                        <div class="message-content">Hey John! How's it going?</div>
+                        <div class="message-time">10:30 AM</div>
+                    </div>
+                    <div class="message sent">
+                        <div class="message-content">Hi Sarah! I'm doing well, thanks. How about you?</div>
+                        <div class="message-time">10:32 AM</div>
+                    </div>
+                    <div class="message received">
+                        <div class="message-content">I'm good too! Just wondering if you'd like to grab coffee this weekend?</div>
+                        <div class="message-time">10:35 AM</div>
+                    </div>
+                    <div class="message sent">
+                        <div class="message-content">Sure, that sounds great! How about Saturday afternoon?</div>
+                        <div class="message-time">10:38 AM</div>
+                    </div>
+                    <div class="message received">
+                        <div class="message-content">Perfect! Let's meet at our usual spot around 2 PM. Does that work for you?</div>
+                        <div class="message-time">10:40 AM</div>
+                    </div>
+                    <div class="message sent">
+                        <div class="message-content">Absolutely! I'll see you then. Looking forward to catching up!</div>
+                        <div class="message-time">10:42 AM</div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button class="send-button">
+                        <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const conversationItems = document.querySelectorAll('.conversation-item');
+    const chatMessages = document.querySelector('.chat-messages');
+    const chatInput = document.querySelector('.chat-input input');
+    const sendButton = document.querySelector('.send-button');
+
+    // Switch between conversations
+    conversationItems.forEach(item => {
+        item.addEventListener('click', function() {
+            conversationItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update chat header
+            const avatar = this.querySelector('.conversation-avatar').src;
+            const name = this.querySelector('.conversation-name').textContent;
+            document.querySelector('.chat-header-avatar').src = avatar;
+            document.querySelector('.chat-header-name').textContent = name;
+            
+            // Clear chat messages (in a real app, you'd load the conversation history here)
+            chatMessages.innerHTML = '';
+        });
+    });
+
+    // Send message functionality
+    function sendMessage() {
+        const messageText = chatInput.value.trim();
+        if (messageText) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message sent';
+            messageElement.innerHTML = `
+                <div class="message-content">${messageText}</div>
+                <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+            `;
+            chatMessages.appendChild(messageElement);
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Simulated received message (for demo purposes)
+    setTimeout(() => {
+        const receivedMessage = document.createElement('div');
+        receivedMessage.className = 'message received';
+        receivedMessage.innerHTML = `
+            <div class="message-content">Great! Can't wait to see you on Saturday. 😊</div>
+            <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+        `;
+        chatMessages.appendChild(receivedMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 3000);
+});
+</script>
+</body>
+</html>

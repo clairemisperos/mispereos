@@ -1,0 +1,281 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialSphere - Notifications</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        color: #1c1e21;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1877f2;
+        text-decoration: none;
+    }
+    nav a {
+        color: #65676b;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #1877f2;
+    }
+    .notifications-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .notification-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #e4e6eb;
+        transition: background-color 0.3s ease;
+    }
+    .notification-item:last-child {
+        border-bottom: none;
+    }
+    .notification-item:hover {
+        background-color: #f7f8fa;
+    }
+    .notification-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .notification-content {
+        flex-grow: 1;
+    }
+    .notification-text {
+        margin-bottom: 5px;
+    }
+    .notification-time {
+        font-size: 12px;
+        color: #65676b;
+    }
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+    .notification-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    .like-icon {
+        background-color: #e7f3ff;
+        color: #1877f2;
+    }
+    .comment-icon {
+        background-color: #e6f3e6;
+        color: #00a400;
+    }
+    .friend-icon {
+        background-color: #fff3e0;
+        color: #f7b928;
+    }
+    .unread {
+        background-color: #e7f3ff;
+    }
+    .unread:hover {
+        background-color: #d1e6fa;
+    }
+    .notification-badge {
+        background-color: #fa3e3e;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .clear-all {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: #f0f2f5;
+        color: #1877f2;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    .clear-all:hover {
+        background-color: #e4e6eb;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">SocialSphere</a>
+            <nav>
+                <a href="/home.html"
+                <a href="/home.html"
+                <a href="/home/messages.html"
+                <a href="/home/notifications.html"
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Notifications</h1>
+        <div class="notifications-container">
+            <div class="notification-item unread">
+                <div class="notification-icon like-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14 9h3l-4-4-4 4h3v6H9l4 4 4-4h-3z"/>
+                    </svg>
+                </div>
+                <img src="https://socialsphere.com/avatars/emily.jpg" alt="Emily's avatar" class="notification-avatar">
+                <div class="notification-content">
+                    <div class="notification-text"><strong>Emily Davis</strong> liked your post: "Just finished my first marathon!"</div>
+                    <div class="notification-time">2 minutes ago</div>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon comment-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <img src="https://socialsphere.com/avatars/mike.jpg" alt="Mike's avatar" class="notification-avatar">
+                <div class="notification-content">
+                    <div class="notification-text"><strong>Mike Thompson</strong> commented on your photo: "Great shot! Where was this taken?"</div>
+                    <div class="notification-time">15 minutes ago</div>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon friend-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="8.5" cy="7" r="4"/>
+                        <line x1="20" y1="8" x2="20" y2="14"/>
+                        <line x1="23" y1="11" x2="17" y2="11"/>
+                    </svg>
+                </div>
+                <img src="https://socialsphere.com/avatars/sarah.jpg" alt="Sarah's avatar" class="notification-avatar">
+                <div class="notification-content">
+                    <div class="notification-text"><strong>Sarah Johnson</strong> accepted your friend request</div>
+                    <div class="notification-time">1 hour ago</div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon like-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14 9h3l-4-4-4 4h3v6H9l4 4 4-4h-3z"/>
+                    </svg>
+                </div>
+                <img src="https://socialsphere.com/avatars/alex.jpg" alt="Alex's avatar" class="notification-avatar">
+                <div class="notification-content">
+                    <div class="notification-text"><strong>Alex Rodriguez</strong> and 5 others liked your status update</div>
+                    <div class="notification-time">3 hours ago</div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon comment-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <img src="https://socialsphere.com/avatars/lisa.jpg" alt="Lisa's avatar" class="notification-avatar">
+                <div class="notification-content">
+                    <div class="notification-text"><strong>Lisa Wang</strong> mentioned you in a comment: "@John, what do you think about this?"</div>
+                    <div class="notification-time">Yesterday</div>
+                </div>
+            </div>
+            <a href="#" class="clear-all">Clear All Notifications</a>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const notificationItems = document.querySelectorAll('.notification-item');
+    const notificationBadge = document.querySelector('.notification-badge');
+    const clearAllButton = document.querySelector('.clear-all');
+
+    function updateNotificationCount() {
+        const unreadCount = document.querySelectorAll('.notification-item.unread').length;
+        notificationBadge.textContent = unreadCount;
+        if (unreadCount === 0) {
+            notificationBadge.style.display = 'none';
+        } else {
+            notificationBadge.style.display = 'inline';
+        }
+    }
+
+    notificationItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.classList.remove('unread');
+            updateNotificationCount();
+        });
+    });
+
+    clearAllButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        notificationItems.forEach(item => {
+            item.classList.remove('unread');
+        });
+        updateNotificationCount();
+    });
+
+    // Simulated new notification (for demo purposes)
+    setTimeout(() => {
+        const newNotification = document.createElement('div');
+        newNotification.className = 'notification-item unread';
+        newNotification.innerHTML = `
+            <div class="notification-icon friend-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="8.5" cy="7" r="4"/>
+                    <line x1="20" y1="8" x2="20" y2="14"/>
+                    <line x1="23" y1="11" x2="17" y2="11"/>
+                </svg>
+            </div>
+            <img src="https://socialsphere.com/avatars/david.jpg" alt="David's avatar" class="notification-avatar">
+            <div class="notification-content">
+                <div class="notification-text"><strong>David Lee</strong> sent you a friend request</div>
+                <div class="notification-time">Just now</div>
+            </div>
+        `;
+        document.querySelector('.notifications-container').insertBefore(newNotification, document.querySelector('.notifications-container').firstChild);
+        updateNotificationCount();
+
+        newNotification.addEventListener('click', function() {
+            this.classList.remove('unread');
+            updateNotificationCount();
+        });
+    }, 5000);
+});
+</script>
+</body>
+</html>

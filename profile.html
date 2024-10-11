@@ -1,0 +1,400 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialSphere - Profile</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        color: #1c1e21;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1877f2;
+        text-decoration: none;
+    }
+    nav a {
+        color: #65676b;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #1877f2;
+    }
+    .profile-header {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .cover-photo {
+        width: 100%;
+        height: 200px;
+        background-image: url('https://socialsphere.com/covers/default-cover.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px 8px 0 0;
+    }
+    .profile-photo {
+        width: 168px;
+        height: 168px;
+        border-radius: 50%;
+        border: 4px solid #ffffff;
+        position: absolute;
+        left: 20px;
+        top: 120px;
+    }
+    .profile-info {
+        margin-top: 100px;
+        padding-left: 200px;
+    }
+    .profile-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .profile-username {
+        color: #65676b;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .profile-bio {
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    .profile-stats {
+        display: flex;
+        gap: 20px;
+        font-size: 15px;
+    }
+    .stat-value {
+        font-weight: bold;
+        color: #1877f2;
+    }
+    .profile-actions {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+    .action-button {
+        background-color: #1877f2;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .action-button:hover {
+        background-color: #166fe5;
+    }
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+    .sidebar, .main-content {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+    .sidebar h2, .main-content h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #1c1e21;
+    }
+    .friends-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .friend-item {
+        text-align: center;
+    }
+    .friend-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+    .friend-name {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .post {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .post-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .post-author {
+        font-weight: bold;
+    }
+    .post-timestamp {
+        color: #65676b;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+    .post-content {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .post-image {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    .post-actions {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #e4e6eb;
+        padding-top: 10px;
+    }
+    .action-button {
+        background: none;
+        border: none;
+        color: #65676b;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+    .action-button:hover {
+        color: #1877f2;
+    }
+    .action-icon {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">SocialSphere</a>
+            <nav>
+                <a href="/home.html"
+                <a href="/home.html"
+                <a href="/home.html"
+                <a href="/home.html"
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="profile-header">
+            <div class="cover-photo"></div>
+            <img src="oo.jpg" alt="claire's profile picture" class="profile-photo">
+            <div class="profile-info">
+                <h1 class="profile-name">claire</h1>
+                <p class="profile-username">@claire</p>
+                <p class="profile-bio">Exploring the digital realm, one post at a time. Tech enthusiast, coffee lover, and aspiring photographer.</p>
+                <div class="profile-stats">
+                    <span><span class="stat-value">248</span> Friends</span>
+                    <span><span class="stat-value">56</span> Posts</span>
+                    <span><span class="stat-value">1.2k</span> Followers</span>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="action-button">Edit Profile</button>
+            </div>
+        </div>
+        <div class="content-grid">
+            <div class="sidebar">
+                <h2>Friends</h2>
+                <div class="friends-list">
+                    <div class="friend-item">
+                        <img src="claire.jpg" alt="Sarah's avatar" class="friend-avatar">
+                        <p class="friend-name">Sarah</p>
+                    </div>
+                    <div class="friend-item">
+                        <img src="ke3.jpg" alt="Mike's avatar" class="friend-avatar">
+                        <p class="friend-name">Mike</p>
+                    </div>
+                    <div class="friend-item">
+                        <img src="images.jpg" alt="Emily's avatar" class="friend-avatar">
+                        <p class="friend-name">Emily</p>
+                    </div>
+                    <div class="friend-item">
+                        <img src="oo.jpg" alt="Alex's avatar" class="friend-avatar">
+                        <p class="friend-name">Alex</p>
+                    </div>
+                    <div class="friend-item">
+                        <img src="hghh.jpg" alt="Lisa's avatar" class="friend-avatar">
+                        <p class="friend-name">Lisa</p>
+                    </div>
+                    <div class="friend-item">
+                        <img src="eree.jpg" alt="Tom's avatar" class="friend-avatar">
+                        <p class="friend-name">Tom</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <h2>Recent Posts</h2>
+                <div class="post">
+                    <div class="post-header">
+                        <img src="ke3.jpg" alt="John's avatar" class="post-avatar">
+                        <div>
+                            <span class="post-author">John Doe</span>
+                            <span class="post-timestamp">2 days ago</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Just got back from an amazing hike! The views were breathtaking. Nature has a way of putting everything into perspective. 🏞️ #NatureLover #Hiking #WeekendAdventure
+                    </div>
+                    <img src="oo.jpg"
+
+                    alt="Scenic mountain landscape with a lake, taken from a hiking trail" class="post-image">
+                    <div class="post-actions">
+                        <button class="action-button">
+                            <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            Like
+                        </button>
+                        <button class="action-button">
+                            <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                            Comment
+                        </button>
+                        <button class="action-button">
+                            <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            Share
+                        </button>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-header">
+                        <img src="claire.jpg" alt="John's avatar" class="post-avatar">
+                        <div>
+                            <span class="post-author">John Doe</span>
+                            <span class="post-timestamp">1 week ago</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Excited to share that I've started learning web development! 💻 Just finished my first HTML/CSS project. It's a small step, but I'm proud of the progress. Any tips from experienced developers out there? #WebDev #LearningToCode #NewSkills
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-button">
+                            <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            Like
+                        </button>
+                        <button class="action-button">
+                            <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                            Comment
+                        </button>
+                        <button class="action-button">
+                            <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                            Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add interactivity to action buttons
+    document.querySelectorAll('.action-button').forEach(button => {
+        button.addEventListener('click', function() {
+            this.style.color = '#1877f2';
+            const originalText = this.textContent.trim();
+            this.textContent = originalText + 'ed';
+            setTimeout(() => {
+                this.style.color = '';
+                this.textContent = originalText;
+            }, 1000);
+        });
+    });
+
+    // Simulate loading more posts
+    const mainContent = document.querySelector('.main-content');
+    let postCount = 2;
+
+    window.addEventListener('scroll', () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+            loadMorePosts();
+        }
+    });
+
+    function loadMorePosts() {
+        for (let i = 0; i < 2; i++) {
+            const post = document.createElement('div');
+            post.className = 'post';
+            post.innerHTML = `
+                <div class="post-header">
+                    <img src="ke3.jpg" alt="John's avatar" class="post-avatar">
+                    <div>
+                        <span class="post-author">John Doe</span>
+                        <span class="post-timestamp">${postCount + i + 1} weeks ago</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    This is an automatically generated post to simulate infinite scrolling. Keep scrolling to see more!
+                </div>
+                <div class="post-actions">
+                    <button class="action-button">
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        Like
+                    </button>
+                    <button class="action-button">
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                        Comment
+                    </button>
+                    <button class="action-button">
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                        Share
+                    </button>
+                </div>
+            `;
+            mainContent.appendChild(post);
+        }
+        postCount += 2;
+    }
+});
+</script>
+</body>
+</html>
